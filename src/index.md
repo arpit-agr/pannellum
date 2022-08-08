@@ -1,6 +1,6 @@
 ---
-title: Hello World
+title: "360º Media"
 layout: "layouts/home.html"
 ---
 
-# {{ title }}
+[360° panoramas with equirectangular projection]

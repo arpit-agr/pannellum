@@ -8,20 +8,21 @@
   <!-- CSS -->
   {%- include "css/styles.njk" -%}
   <!-- PRELOAD SCRIPTS AND FONTS-->
+  {%- block preload -%}{%- endblock -%}
   <!-- NAMED BLOCK TO INJECT ELEMENTS FROM LAYOUT FILES -->
   {%- block injectHead -%}{%- endblock -%}
   <!-- META INFORMATION -->
   {%- include "partials/meta.html" -%}
 </head>
-<body>
-  <a href="#main" class="skip-to-main">Skip to content</a>
-  <header class="site-head"></header>
+<body class="stack">
+  <!-- <a href="#main" class="skip-to-main">Skip to content</a> -->
+  <!-- <header class="site-head"></header> -->
   <main id="main" tabindex="-1">
     {%- block content -%}
       This page is under maintenance.
     {%- endblock -%}
   </main>
-  <footer role="contentinfo"></footer>
+  <!-- <footer role="contentinfo"></footer> -->
   {%- block bodyScripts -%}{%- endblock -%}
 </body>
 </html>

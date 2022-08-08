@@ -1,0 +1,32 @@
+
+.flow>*+* {
+  margin-top: var(--flow-space,1em);
+}
+
+:where(.cluster) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, 1em);
+  justify-content: var(--cluster-horizontal-alignment, flex-start);
+  align-items: var(--cluster-vertical-alignment, center);
+}
+
+:where(.stack) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, 1em);
+  justify-content: var(--stack-vertical-alignment, flex-start);
+  align-items: var(--stack-horizontal-alignment, flex-start);
+}
+
+.vh {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}

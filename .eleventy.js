@@ -1,15 +1,25 @@
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const sortByDisplayOrder = require('./src/_11ty/utils/sort-by-display-order.js');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setQuietMode(true);
+
+  // Collections
+	eleventyConfig.addCollection("pages", function(collectionApi) {
+		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/pages/*.md"));
+	});
+
+  //Plugins
   eleventyConfig.addPlugin(directoryOutputPlugin);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   //Passthrough copy
+	eleventyConfig.addPassthroughCopy("./src/images");
+	eleventyConfig.addPassthroughCopy("./src/scripts");
   // eleventyConfig.addPassthroughCopy("./src/fonts");
-	// eleventyConfig.addPassthroughCopy("./src/images");
-	// eleventyConfig.addPassthroughCopy("./src/scripts");
   // eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 	// eleventyConfig.addPassthroughCopy("./src/icon.svg");
 	// eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
@@ -29,6 +39,14 @@ module.exports = function(eleventyConfig) {
     else {
       return code
     }
+  });
+  eleventyConfig.addFilter("addNbsp", (str) => {
+    if (!str) {
+      return;
+    }
+    let title = str.replace(/((.*)\s(.*))$/g, "$2&nbsp;$3");
+    title = title.replace(/"(.*)"/g, '\\"$1\\"');
+    return title;
   });
 
   //Transforms
