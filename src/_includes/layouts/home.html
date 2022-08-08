@@ -3,10 +3,9 @@
 {%- block content -%}
   <header class="flow">
     <div class="site-title cluster">
-      <h1>{{ title | addNbsp | safe }}</h1>
+      <h1>{{ site.name | addNbsp | safe }}</h1>
       <small>{{ content | safe }}</small>
     </div>
-    <!-- <hr> -->
     {%- include "partials/nav.html" -%}
   </header>
 {%- endblock -%}

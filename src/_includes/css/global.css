@@ -68,8 +68,20 @@ header {
 }
 
 .site-title {
-  --cluster-gap: 0.25em;
+  --cluster-gap: 0.25em 0.5em;
+  --cluster-horizontal-alignment: space-between;
   --cluster-vertical-alignment: baseline;
+  padding-block-end: var(--space-xs-s);
+  border-block-end: 1px solid;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.site-title:after {
+  content: "\2726";
+  margin-inline-start: auto;
 }
 
 nav {

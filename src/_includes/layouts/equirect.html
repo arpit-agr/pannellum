@@ -13,9 +13,15 @@
     </noscript>
   </div>
   <div class="image-info cluster">
-    {{ content | safe }}
+    <div class="stack">
+      {{ content | safe }}
+      <a class="link" href="/">
+        <span>← Home</span>
+        {%- include "snippets/underline.html" -%}
+      </a>
+    </div>
     <p>
-      {{ image.alt }}
+      {{ image.alt | addNbsp | safe }}
       <br>
       Photo credit:
       <a href="{{ image.credit.link }}">

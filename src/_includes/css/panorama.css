@@ -8,6 +8,7 @@
   position: absolute;
   width: 100%;
   height: 33%;
+  height: 50%;
   inset-block-end: 0;
   background: linear-gradient(
     0deg,
@@ -52,11 +53,18 @@
   pointer-events: none;
 }
 
-.image-info h1 {
+.image-info .stack {
+  --stack-gap: 0em;
   flex: 1;
 }
 
-.image-info h1 + p {
+.image-info .stack a {
+  order: -1;
+  inline-size: max-content;
+  font-size: var(--step--1);
+}
+
+.image-info .stack + p {
   font-size: var(--step--1);
   flex: 999;
   text-align: right;
