@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+  paths = [
+    "./public/img/", # Eleventy Image Disk Cache
+    ".cache" # Remote Asset Cache
+  ]

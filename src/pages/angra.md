@@ -13,7 +13,7 @@ image:
   credit:
     name: "Marzipano"
     link: "https://www.marzipano.net/demos/equirect/"
-eleventyExcludeFromCollections: true
+eleventyExcludeFromCollections: "true"
 ---
 
 # {{ title | addNbsp | safe }}
