@@ -5,7 +5,7 @@ displayOrder: 3
 eleventyNavigation:
   key: "Angra"
 image:
-  fallback: "pia19806_roundhorizon.jpeg"
+  fallback: "angra.webp"
   alt: "Angra, Portugal is a UNESCO classified World Heritage Site."
   yaw: "180"
   pitch: "0"

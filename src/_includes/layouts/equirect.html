@@ -7,13 +7,7 @@
 {%- endblock -%}
 
 {%- block content -%}
-  <div 
-    id="panorama"
-    data-image={{ image.link }}
-    data-yaw={{ image.yaw }}
-    data-pitch={{ image.pitch }}
-    data-fov={{ image.fov }}
-  >
+  <div id="panorama">
     <noscript>
       <img src={{ imgUrl }} alt="{{ image.alt }}">
     </noscript>
