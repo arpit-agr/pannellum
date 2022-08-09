@@ -17,10 +17,16 @@ body {
   --block-size: 100vh;
 
   min-block-size: var(--block-size);
+  overflow: hidden;
   background-color: var(--primary);
   color: var(--secondary);
   font-family: var(--font-plain);
   font-size: var(--step-0);
+
+  background-image: var(--birds);
+  background-repeat: no-repeat no-repeat;
+  background-position: top center;
+  background-size: contain;
 }
 
 @supports (height: 100dvh) {
@@ -72,7 +78,7 @@ header {
   --cluster-horizontal-alignment: space-between;
   --cluster-vertical-alignment: baseline;
   padding-block-end: var(--space-xs-s);
-  border-block-end: 1px solid;
+  border-block-end: 1px dotted;
 }
 
 .site-title a {
@@ -111,10 +117,20 @@ nav li::after {
   stroke-width: 2px;
   transition: transform 0.7s;
   transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
-
-
 }
 
 .link:hover .link__graphic--slide {
   transform: translatex(-66.6%);
+}
+
+[data-layout*="home"] {
+  background-position: bottom center;
+}
+
+[data-layout*="home"] h1 {
+  font-size: var(--step-4);
+}
+
+[data-layout*="home"] a {
+  font-size: var(--step-1);
 }

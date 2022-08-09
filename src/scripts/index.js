@@ -126,8 +126,12 @@ window.libpannellum = function(E, g, p) {
           A.width = Math.round(A.width / 2);
           A.height = Math.round(A.height / 2)
       }
+        let panoElement = document.getElementById('panorama');
+        let panoImgDesc = panoElement.getAttribute("data-desc");
       var A = g.createElement("canvas");
       A.style.width = A.style.height = "100%";
+      A.innerHTML = panoImgDesc;
+
       K.appendChild(A);
       var c, a, U, V, $, R, wa, ga, m, z, F, ca, Fa, Y, na, va;
       this.init = function(L, e, Ca, H, l, h, d, u) {

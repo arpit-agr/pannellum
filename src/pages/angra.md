@@ -6,7 +6,8 @@ eleventyNavigation:
   key: "Angra"
 image:
   fallback: "angra.webp"
-  alt: "Angra, Portugal is a UNESCO classified World Heritage Site."
+  description: "360º panoramic view of the city of Angra from R. Baixinha"
+  subtitle: "Angra, Portugal is a UNESCO classified World Heritage Site."
   yaw: "180"
   pitch: "0"
   fov: "90"

@@ -180,8 +180,8 @@
   padding: var(--space-xs-s);
   /* margin: -75px 0 0 -100px; */
   transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0,0.7);
-  background-color: hsl(9deg 46% 7% / 80%);
+  /* background-color: rgba(0,0,0,0.7);
+  background-color: hsl(9deg 46% 7% / 80%); */
   border-radius: 3px;
   text-align: center;
   font-size: var(--step-0);

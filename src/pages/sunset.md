@@ -6,7 +6,8 @@ eleventyNavigation:
   key: "Sunset on Cerro Paranal"
 image:
   fallback: "chile.jpg"
-  alt: "A 360º panorama of Cerro Paranal and the VLT at sunset, just before the mountain is vacated and observation begins."
+  description: "A 360º panorama of Cerro Paranal and The Very Large Telescope (VLT) at sunset, just before the mountain is vacated and observation begins."
+  subtitle: "A 360º panorama of Cerro Paranal and the VLT at sunset, just before the mountain is vacated and observation begins."
   yaw: "80"
   pitch: "0"
   fov: "90"

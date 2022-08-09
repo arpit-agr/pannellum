@@ -8,9 +8,9 @@
 {%- endblock -%}
 
 {%- block content -%}
-  <div id="panorama">
+  <div id="panorama" data-desc="{{ image.description }}">
     <noscript>
-      <img src={{ fallbackUrl }} alt="{{ image.alt }}">
+      <img src={{ fallbackUrl }} alt="{{ image.description }}">
     </noscript>
   </div>
   <div class="image-info cluster">
@@ -22,7 +22,7 @@
       </a>
     </div>
     <p>
-      {{ image.alt | addNbsp | safe }}
+      {{ image.subtitle }}
       <br>
       Photo credit:
       <a href="{{ image.credit.link }}">
