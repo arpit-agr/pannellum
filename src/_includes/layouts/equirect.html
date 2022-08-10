@@ -1,49 +1,16 @@
-{%- extends "layouts/base.html" -%}
+{%- extends "layouts/panorama.html" -%}
 
-{% set imgUrl = "/images/" + image.fallback %}
-
-{%- block preload -%}
-  <link rel="preload" href="/scripts/index.js" as="script" fetchpriority="high">
-{%- endblock -%}
-
-{%- block content -%}
-  <div id="panorama" data-desc="{{ image.description }}">
-    <noscript>
-      <img src={{ imgUrl }} alt="{{ image.description }}">
-    </noscript>
-  </div>
-  <div class="image-info cluster">
-    <div class="stack">
-      {{ content | safe }}
-      <a class="link" href="/">
-        <span>← Home</span>
-        {%- include "snippets/underline.html" -%}
-      </a>
-    </div>
-    <p>
-      {{ image.subtitle }}
-      <br>
-      Photo credit:
-      <a href="{{ image.credit.link }}">
-        {{ image.credit.name }}
-      </a>
-    </p>
-  </div>
-{%- endblock -%}
-
-{%- block bodyScripts -%}
-<script src="/scripts/index.js"></script>
-
-  <script>
-    pannellum.viewer('panorama', {
-      "type": "equirectangular",
-      "panorama": "{{ imgUrl }}",
-      "autoLoad": true,
-      "yaw": {{ image.yaw }},
-      "pitch": {{ image.pitch}},
-      "hfov": {{ image.fov }},
-      "keyboardZoom": false,
-      "mouseZoom": false
-    });
-  </script>
+{%- block panoramaConfig -%}
+<script>
+  let panoramaConfig = {
+    type: "equirectangular",
+    panorama: panoUrl,
+    autoLoad: true,
+    yaw: parseInt(panoYaw),
+    pitch: parseInt(panoPitch),
+    hfov: parseInt(panoHfov),
+    keyboardZoom: false,
+    mouseZoom: false
+  };
+</script>
 {%- endblock -%}

@@ -1,0 +1,69 @@
+{%- extends "layouts/base.html" -%}
+
+{% set fallbackUrl = "/images/" + image.fallback %}
+
+{%- block preload -%}
+  <link rel="preload" href="/scripts/index.js" as="script" fetchpriority="high">
+{%- endblock -%}
+
+{%- block content -%}
+  <div 
+    id="panorama" 
+    data-yaw="{{ image.yaw }}" 
+    data-pitch="{{ image.pitch }}" 
+    data-fov="{{ image.fov }}" 
+    data-maxlevel="{{ image.maxLevel }}" 
+    data-res="{{ image.cubeResolution }}" 
+    data-imgUrl="{{ fallbackUrl }}"
+    data-desc="{{ image.description }}"
+    {% if hotspot.text %}
+    data-hotspot-pitch="{{ hotspot.pitch }}"
+    data-hotspot-yaw="{{ hotspot.yaw }}"
+    data-hotspot-text="{{ hotspot.text }}"
+    {% endif %}
+    >
+    <noscript>
+      <img src={{ fallbackUrl }} alt="{{ image.description }}">
+    </noscript>
+  </div>
+  <div class="image-info cluster">
+    <div class="stack">
+      {{ content | safe }}
+      <a class="link" href="/">
+        <span>← Home</span>
+        {%- include "snippets/underline.html" -%}
+      </a>
+    </div>
+    <p>
+      {{ image.subtitle }}
+      <br>
+      Photo credit:
+      <a href="{{ image.credit.link }}">
+        {{ image.credit.name | addNbsp | safe }}
+      </a>
+    </p>
+  </div>
+{%- endblock -%}
+
+{%- block bodyScripts -%}
+  <script>
+    let panoElement = document.getElementById('panorama');
+    let panoYaw = panoElement.getAttribute("data-yaw");
+    let panoPitch = panoElement.getAttribute("data-pitch");
+    let panoHfov = panoElement.getAttribute("data-fov");
+    let panoMaxLevel = panoElement.getAttribute("data-maxLevel");
+    let panoRes = panoElement.getAttribute("data-res");
+    let panoUrl = panoElement.getAttribute("data-imgUrl");
+    let panoDesc = panoElement.getAttribute("data-desc");
+    </script>
+    {% if hotspot.text %}
+    <script>
+      let panoHotspotPitch = panoElement.getAttribute("data-hotspot-pitch");
+      let panoHotspotYaw = panoElement.getAttribute("data-hotspot-yaw");
+      let panoHotspotText = panoElement.getAttribute("data-hotspot-text");
+    </script>
+    {% endif %}
+  {%- block panoramaConfig -%}{%- endblock -%}
+  <script src="/scripts/index.js"></script>
+  <script>pannellum.viewer('panorama', panoramaConfig);</script>
+{%- endblock -%}
