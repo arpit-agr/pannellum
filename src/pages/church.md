@@ -10,7 +10,7 @@ image:
   subtitle: "The Brompton Oratory is a large neo-classical Roman Catholic church in London. It was completed in 1884."
   yaw: 0
   pitch: 0
-  fov: 50
+  fov: 60
   maxLevel: 5
   cubeResolution: 4360
   credit:
