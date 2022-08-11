@@ -4,7 +4,7 @@
   <ul role="list" class="stack">
     {% for entry in navPages %}
     <li>
-        <a class="link" href="{{ entry.url }}" aria-label="{{ entry.title }}">
+        <a class="link fade-in" href="{{ entry.url }}" aria-label="{{ entry.title }}">
           <span>{{ entry.title }}</span>
           {%- include "snippets/underline.html" -%}
         </a>

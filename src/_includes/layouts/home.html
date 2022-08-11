@@ -1,5 +1,9 @@
 {%- extends "layouts/base.html" -%}
 
+{%- block preload -%}
+  <link rel="preload" href="/scripts/fade-in.js" as="script" fetchpriority="high">
+{%- endblock -%}
+
 {%- block content -%}
   <header class="flow">
     <div class="site-title cluster">
@@ -8,4 +12,7 @@
     </div>
     {%- include "partials/nav.html" -%}
   </header>
+{%- endblock -%}
+{%- block bodyScripts -%}
+  <script src="/scripts/fade-in.js" defer async></script>
 {%- endblock -%}

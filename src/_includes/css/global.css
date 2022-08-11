@@ -1,136 +1,136 @@
 :root {
-  --font-plain: -apple-system, BlinkMacSystemFont, segoe ui, helvetica neue,
-    helvetica, roboto, arial, sans-serif;
-  --letter-spacing-0: -0.015em;
-  --line-height-0: 1.1;
+	--font-plain: -apple-system, BlinkMacSystemFont, segoe ui, helvetica neue,
+		helvetica, roboto, arial, sans-serif;
+	--letter-spacing-0: -0.015em;
+	--line-height-0: 1.1;
 }
 
 :root {
-  --primary: black;
-  --secondary: white;
+	--primary: black;
+	--secondary: white;
 }
 
 body {
-  --stack-gap: 0;
-  --stack-vertical-alignment: stretch;
-  --stack-horizontal-alignment: stretch;
-  --block-size: 100vh;
+	--stack-gap: 0;
+	--stack-vertical-alignment: stretch;
+	--stack-horizontal-alignment: stretch;
+	--block-size: 100vh;
 
-  min-block-size: var(--block-size);
-  overflow: hidden;
-  background-color: var(--primary);
-  color: var(--secondary);
-  font-family: var(--font-plain);
-  font-size: var(--step-0);
+	min-block-size: var(--block-size);
+	overflow: hidden;
+	background-color: var(--primary);
+	color: var(--secondary);
+	font-family: var(--font-plain);
+	font-size: var(--step-0);
 
-  background-image: var(--birds);
-  background-repeat: no-repeat no-repeat;
-  background-position: top center;
-  background-size: contain;
+	background-image: var(--birds);
+	background-repeat: no-repeat no-repeat;
+	background-position: top center;
+	background-size: contain;
 }
 
 @supports (height: 100dvh) {
-  body {
-    --block-size: 100dvh;
-  }
+	body {
+		--block-size: 100dvh;
+	}
 }
 
 main {
-  flex-grow: 1;
-  position: relative;
+	flex-grow: 1;
+	position: relative;
 }
 
 h1 {
-  font-size: var(--step-3);
-  font-weight: 400;
-  line-height: var(--line-height-0);
-  letter-spacing: var(--letter-spacing-0);
+	font-size: var(--step-3);
+	font-weight: 400;
+	line-height: var(--line-height-0);
+	letter-spacing: var(--letter-spacing-0);
 }
 
 p {
-  max-inline-size: 50ch;
+	max-inline-size: 50ch;
 }
 
 a {
-  display: inline-block;
-  color: inherit;
-  pointer-events: auto;
-  text-underline-offset: 0.25ex;
+	display: inline-block;
+	color: inherit;
+	pointer-events: auto;
+	text-underline-offset: 0.25ex;
 }
 
 small {
-  font-size: var(--step--1);
+	font-size: var(--step--1);
 }
 
 hr {
-  border-style: dashed;
+	border-style: dashed;
 }
 
 /* home page */
 
 header {
-  /* --cluster-horizontal-alignment: space-between; */
-  padding: var(--space-xs-s);
+	/* --cluster-horizontal-alignment: space-between; */
+	padding: var(--space-xs-s);
 }
 
 .site-title {
-  --cluster-gap: 0.25em 0.5em;
-  --cluster-horizontal-alignment: space-between;
-  --cluster-vertical-alignment: baseline;
-  padding-block-end: var(--space-xs-s);
-  border-block-end: 1px dotted;
+	--cluster-gap: 0.25em 0.5em;
+	--cluster-horizontal-alignment: space-between;
+	--cluster-vertical-alignment: baseline;
+	padding-block-end: var(--space-xs-s);
+	border-block-end: 1px dotted;
 }
 
 .site-title a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .site-title:after {
-  content: "\2726";
-  margin-inline-start: auto;
+	content: "\2726";
+	margin-inline-start: auto;
 }
 
 nav {
-  --flow-space: 2em;
+	--flow-space: 2em;
 }
 
-nav li::after {
-  content: "\2726";
-}
+/* nav li::after {
+	content: "\2726";
+} */
 
 .link {
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  padding-block-end: var(--space-3xs-2xs);
+	text-decoration: none;
+	position: relative;
+	overflow: hidden;
+	padding-block-end: var(--space-3xs-2xs);
 }
 
 .link__graphic--slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  fill: none;
-  stroke: var(--secondary);
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	fill: none;
+	stroke: var(--secondary);
 
-  top: -3px;
-  stroke-width: 2px;
-  transition: transform 0.7s;
-  transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+	top: -3px;
+	stroke-width: 2px;
+	transition: transform 0.7s;
+	transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
 }
 
 .link:hover .link__graphic--slide {
-  transform: translatex(-66.6%);
+	transform: translatex(-66.6%);
 }
 
 [data-layout*="home"] {
-  background-position: bottom center;
+	background-position: bottom center;
 }
 
 [data-layout*="home"] h1 {
-  font-size: var(--step-4);
+	font-size: var(--step-4);
 }
 
 [data-layout*="home"] a {
-  font-size: var(--step-1);
+	font-size: var(--step-1);
 }
