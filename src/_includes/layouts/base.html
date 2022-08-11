@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- IF JS IS AVAILABLE ADD CLASS -->
+  <!-- if js is available add class -->
   <script>document.documentElement.classList.add('has-js');</script>
-  <!-- CSS -->
+  <!-- css -->
   {%- include "css/styles.njk" -%}
-  <!-- PRELOAD SCRIPTS AND FONTS-->
+  <!-- preload scripts and fonts -->
   {%- block preload -%}{%- endblock -%}
-  <!-- NAMED BLOCK TO INJECT ELEMENTS FROM LAYOUT FILES -->
+  <!-- named block to inject elements from layout files -->
   {%- block injectHead -%}{%- endblock -%}
-  <!-- META INFORMATION -->
+  <!-- meta information -->
   {%- include "partials/meta.html" -%}
+  <!-- prefetch scripts and fonts -->
+  {%- block prefetch -%}{%- endblock -%}
 </head>
 <body class="stack" data-layout="{{ layout }}">
   <!-- <a href="#main" class="skip-to-main">Skip to content</a> -->

@@ -4,6 +4,10 @@
   <link rel="preload" href="/scripts/fade-in.js" as="script" fetchpriority="high">
 {%- endblock -%}
 
+{%- block prefetch -%}
+  <link rel="prefetch" href="/scripts/index.js" as="script">
+{%- endblock -%}
+
 {%- block content -%}
   <header class="flow">
     <div class="site-title cluster">
