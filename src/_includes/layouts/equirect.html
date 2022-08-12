@@ -13,4 +13,17 @@
     mouseZoom: false
   };
 </script>
+{% if image.haov or image.vaov %}
+<script>
+  let partialPanoConfig = {
+    haov: parseFloat(panoHaov),
+    vaov: parseFloat(panoVaov),
+    vOffset: parseFloat(panoVoffset),
+    minPitch: parseFloat(panoVaov) / -2,
+    maxPitch: parseFloat(panoVaov) / 2
+  }
+  panoramaConfig = { ...panoramaConfig, ...partialPanoConfig };
+  // console.log(panoramaConfig);
+</script>
+{% endif %}
 {%- endblock -%}
