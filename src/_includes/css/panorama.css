@@ -30,8 +30,7 @@
 }
 
 #panorama noscript img {
-  min-block-size: var(--block-size);
-  object-fit: cover;
+	object-fit: contain;
 }
 
 .image-info {
