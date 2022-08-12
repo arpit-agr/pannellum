@@ -21,6 +21,11 @@
     data-hotspot-yaw="{{ hotspot.yaw }}"
     data-hotspot-text="{{ hotspot.text }}"
     {% endif %}
+    {% if image.haov or image.vaov %}
+    data-haov="{{ image.haov }}"
+    data-vaov="{{ image.vaov }}"
+    data-vOffset="{{ image.vOffset }}"
+    {% endif %}
     >
     <noscript>
       <img src={{ fallbackUrl }} alt="{{ image.description }}">
@@ -61,6 +66,13 @@
       let panoHotspotPitch = panoElement.getAttribute("data-hotspot-pitch");
       let panoHotspotYaw = panoElement.getAttribute("data-hotspot-yaw");
       let panoHotspotText = panoElement.getAttribute("data-hotspot-text");
+    </script>
+    {% endif %}
+    {% if image.haov or image.vaov %}
+    <script>
+      let panoHaov = panoElement.getAttribute("data-haov");
+      let panoVaov = panoElement.getAttribute("data-vaov");
+      let panoVoffset = panoElement.getAttribute("data-vOffset");
     </script>
     {% endif %}
   {%- block panoramaConfig -%}{%- endblock -%}
