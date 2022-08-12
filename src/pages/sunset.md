@@ -16,10 +16,7 @@ image:
   credit:
     name: "M. Cabral/ESO"
     link: "https://www.eso.org/public/images/ESO_Paranal_360_Marcio_Cabral_Chile_08-CC/"
-hotspot:
-  pitch: 22
-  yaw: 156
-  text: "The Very Large Telescope (VLT)"
+eleventyExcludeFromCollections: true
 ---
 
 # {{ title | addNbsp | safe }}

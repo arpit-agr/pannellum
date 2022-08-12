@@ -16,6 +16,7 @@ image:
   credit:
     name: "David Iliff"
     link: "https://commons.wikimedia.org/wiki/File:Brompton_Oratory_360x180,_London,_UK_-_Diliff.jpg"
+eleventyExcludeFromCollections: true
 ---
 
 # {{ title }}
