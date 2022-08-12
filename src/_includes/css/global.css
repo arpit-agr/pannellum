@@ -17,7 +17,6 @@ body {
 	--block-size: 100vh;
 
 	min-block-size: var(--block-size);
-	overflow: hidden;
 	background-color: var(--primary);
 	color: var(--secondary);
 	font-family: var(--font-plain);
@@ -27,6 +26,10 @@ body {
 	background-repeat: no-repeat no-repeat;
 	background-position: top center;
 	background-size: contain;
+}
+
+.has-js body {
+	overflow: hidden;
 }
 
 @supports (height: 100dvh) {

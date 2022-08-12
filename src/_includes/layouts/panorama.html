@@ -1,6 +1,11 @@
 {%- extends "layouts/base.html" -%}
 
-{% set fallbackUrl = "/images/" + image.fallback %}
+{% if layout != "layouts/tour.html" %}
+  {% set fallbackUrl = "/images/" + image.fallback %}
+{% else %}
+  {% set scene1Fallback = "/images/" + scene1.fallback %}
+  {% set scene2Fallback = "/images/" + scene2.fallback %}
+{% endif %}
 
 {%- block preload -%}
   <link rel="preload" href="/scripts/index.js" as="script" fetchpriority="high">
@@ -28,7 +33,12 @@
     {% endif %}
     >
     <noscript>
-      <img src={{ fallbackUrl }} alt="{{ image.description }}">
+      {% if layout != "layouts/tour.html" %}
+        <img src={{ fallbackUrl }} alt="{{ image.description }}">
+      {% else %}
+        <img src={{ scene1Fallback }} alt="{{ scene1.description }}">
+        <img src={{ scene2Fallback }} alt="{{ scene2.description }}">
+      {% endif %}
     </noscript>
   </div>
   <div class="image-info cluster">
@@ -78,4 +88,5 @@
   {%- block panoramaConfig -%}{%- endblock -%}
   <script src="/scripts/index.js"></script>
   <script>pannellum.viewer('panorama', panoramaConfig);</script>
+  <!-- <script>document.getElementById("panorama").focus();</script> -->
 {%- endblock -%}
