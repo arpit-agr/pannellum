@@ -1,0 +1,70 @@
+{%- extends "layouts/panorama.html" -%}
+
+{%- block panoramaConfig -%}
+<script>
+  let panoramaConfig = {   
+    default: {
+      firstScene: "scene1",
+      sceneFadeDuration: 400,
+      autoLoad: true,
+      keyboardZoom: false,
+      mouseZoom: false
+    },
+    scenes: {
+      scene1: {
+        type: "multires",
+        multiRes: {
+          basePath: "{{ scene1.imgPath }}",
+          path: "/%l/%s%y_%x",
+          fallbackPath: "/fallback/%s",
+          extension: "jpg",
+          tileResolution: 512,
+          maxLevel: parseInt("{{ scene1.maxLevel }}"),
+          cubeResolution: parseInt("{{ scene1.cubeResolution }}")
+        },
+        yaw: parseInt("{{ scene1.yaw }}"),
+        pitch: parseInt("{{ scene1.pitch }}"),
+        hfov: parseInt("{{ scene1.fov }}"),
+        hotSpots: [
+          {
+            yaw: parseInt("{{ scene1.hotspot.yaw }}"),
+            pitch: parseInt("{{ scene1.hotspot.pitch }}"),
+            type: "scene",
+            text: "{{ scene2.title }}",
+            sceneId: "scene2",
+            targetYaw: parseInt("{{ scene1.hotspot.targetYaw }}"),
+            targetPitch: parseInt("{{ scene1.hotspot.targetPitch }}")
+          }
+        ]
+      },
+      scene2: {
+        type: "multires",
+        multiRes: {
+          basePath: "{{ scene2.imgPath }}",
+          path: "/%l/%s%y_%x",
+          fallbackPath: "/fallback/%s",
+          extension: "jpg",
+          tileResolution: 512,
+          maxLevel: parseInt("{{ scene2.maxLevel }}"),
+          cubeResolution: parseInt("{{ scene2.cubeResolution }}")
+        },
+        yaw: parseInt("{{ scene2.yaw }}"),
+        pitch: parseInt("{{ scene2.pitch }}"),
+        hfov: parseInt("{{ scene2.fov }}"),
+        hotSpots: [
+          {
+            yaw: parseInt("{{ scene2.hotspot.yaw }}"),
+            pitch: parseInt("{{ scene2.hotspot.pitch }}"),
+            type: "scene",
+            text: "{{ scene1.title }}",
+            sceneId: "scene1",
+            targetYaw: parseInt("{{ scene2.hotspot.targetYaw }}"),
+            targetPitch: parseInt("{{ scene2.hotspot.targetPitch }}")
+          }
+        ]
+      }
+    }
+  };
+  // console.log(panoramaConfig);
+</script>
+{%- endblock -%}
