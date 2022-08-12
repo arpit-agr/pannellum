@@ -14,7 +14,7 @@ image:
   maxLevel: 4
   cubeResolution: 3848
   credit:
-    name: "ESO"
+    name: "M. Cabral/ESO"
     link: "https://www.eso.org/public/images/ESO_Paranal_360_Marcio_Cabral_Chile_08-CC/"
 hotspot:
   pitch: 22
