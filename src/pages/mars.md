@@ -14,7 +14,7 @@ image:
   maxLevel: 4
   cubeResolution: 2600
   credit:
-    name: "Tomasz Mielnik"
+    name: "Tomasz Mielnik/NASA"
     link: "http://tomaszmielnik.pl/mars-panorama-sol-3303-curiosity-rover/"
 ---
 
