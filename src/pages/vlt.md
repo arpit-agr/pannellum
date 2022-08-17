@@ -30,7 +30,7 @@ scene2:
   cubeResolution: 3720
   yaw: 0
   pitch: 0
-  fov: 100
+  fov: 65
   hotspot:
     yaw: 78
     pitch: 8
