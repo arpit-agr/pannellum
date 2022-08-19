@@ -1,7 +1,7 @@
 ---
 title: "Curiosity rover's selfie"
 layout: "layouts/multires.html"
-displayOrder: 3
+displayOrder: 4
 eleventyNavigation:
   key: "Curiosity rover's selfie on Mars"
 image:
