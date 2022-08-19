@@ -10,7 +10,7 @@ image:
   subtitle: "A 360º panorama of a unique cloudscape over La Silla, in the southern edges of the Atacama Desert."
   yaw: 240
   pitch: 0
-  fov: 80
+  fov: 50
   haov: 360
   vaov: 53.4
   vOffset: 0
